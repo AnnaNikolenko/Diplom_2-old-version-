@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import site.nomoreparties.stellarburgers.pojo.Client.ApiClient;
 import site.nomoreparties.stellarburgers.pojo.Model.UserData;
+
 import java.util.Random;
 
 public class CreateUserTest {

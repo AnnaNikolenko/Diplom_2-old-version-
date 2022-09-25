@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import site.nomoreparties.stellarburgers.pojo.Client.ApiClient;
 import site.nomoreparties.stellarburgers.pojo.Model.UserData;
+
 import java.util.Random;
 
 public class AuthorizationUserTest {
@@ -26,7 +27,7 @@ public class AuthorizationUserTest {
     @Test
     @DisplayName("Авторизация под существующим пользователем")
     public void validAuthorization() {
-         responseAuthorization = client.createAuthorization(userData)
+        responseAuthorization = client.createAuthorization(userData)
                 .then()
                 .statusCode(200)
                 .extract().as(UserData.class);

@@ -11,7 +11,8 @@ public class User {
         this.name = name;
     }
 
-    public User(){}
+    public User() {
+    }
 
     public String getEmail() {
         return email;

@@ -8,11 +8,12 @@ import org.junit.Before;
 import org.junit.Test;
 import site.nomoreparties.stellarburgers.pojo.Client.ApiClient;
 import site.nomoreparties.stellarburgers.pojo.Model.UserData;
+
 import java.util.Random;
 
 public class UpdateUserDataAfterAuthorizationTest {
     private ApiClient client;
-    private  UserData userData;
+    private UserData userData;
     private String email;
     private String name;
     private String password;
@@ -44,7 +45,7 @@ public class UpdateUserDataAfterAuthorizationTest {
     }
 
     @After
-    public void deleteUser(){
+    public void deleteUser() {
         client.deleteUser(accessToken);
     }
 
@@ -52,7 +53,7 @@ public class UpdateUserDataAfterAuthorizationTest {
     @DisplayName("Обновление почты и имени пользователя для авторизованного пользователя")
     public void updateEmailAndNameOfUserTest() {
         //сгенерировть новые почту и имя
-        String newEmail =  new Random().nextInt() + email;
+        String newEmail = new Random().nextInt() + email;
         String newName = new Random().nextInt() + name;
         userData = new UserData(newEmail, password, newName, null, null, null, null, null);
         //отправить на сервер новые данные
@@ -69,7 +70,7 @@ public class UpdateUserDataAfterAuthorizationTest {
     @DisplayName("Обновление почты пользователя для авторизованного пользователя")
     public void updateEmailOfUserTest() {
         //сгенерировть новый  емейл
-        String newEmail =  new Random().nextInt() + email;
+        String newEmail = new Random().nextInt() + email;
         userData = new UserData(newEmail, password, name, null, null, null, null, null);
         //отправить на сервер новые данные
         final UserData responseOfUpdateEmail = client.updateUserData(accessToken, userData)
@@ -84,7 +85,7 @@ public class UpdateUserDataAfterAuthorizationTest {
     @DisplayName("Обновление имени пользователя для авторизованного пользователя")
     public void updateNameOfUserTest() {
         //сгенерировть новое имя
-        String newName =  new Random().nextInt() + name;
+        String newName = new Random().nextInt() + name;
         userData = new UserData(email, password, newName, null, null, null, null, null);
         //отправить на сервер новые данные
         final UserData responseOfUpdatedData = client.updateUserData(accessToken, userData)

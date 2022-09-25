@@ -9,6 +9,7 @@ import org.junit.Test;
 import site.nomoreparties.stellarburgers.pojo.Client.ApiClient;
 import site.nomoreparties.stellarburgers.pojo.Model.OrderData;
 import site.nomoreparties.stellarburgers.pojo.Model.UserData;
+
 import java.util.List;
 import java.util.Random;
 
@@ -59,7 +60,7 @@ public class CreateOrderTest {
         OrderData orderData = client.getIngredients()
                 .then()
                 .extract().as(OrderData.class);
-       //передать невалидный хеш-код ингредиента для добавления в заказ
+        //передать невалидный хеш-код ингредиента для добавления в заказ
         OrderData ingredientsOfNewOrder = new OrderData(List.of(orderData.getData().get(0).get_id().replace("61c0c5a71d1f82001bdaaa6d", "Myid")), null, null, null, null, null, List.of());
         //создать заказ с выбранными ингредиентами
         OrderData responseOfCreateOrder = client.createOrder(ingredientsOfNewOrder)
@@ -77,7 +78,7 @@ public class CreateOrderTest {
         //авторизоваться
         client.createAuthorization(userData);
         //объявить пустой список ингредиентов для добавления в заказ
-        OrderData orderData = new OrderData(List.of(), null, null, null, null, null, List.of() );
+        OrderData orderData = new OrderData(List.of(), null, null, null, null, null, List.of());
         //создать заказ без ингредиентов
         OrderData responseOfCreateOrder = client.createOrder(orderData)
                 .then()

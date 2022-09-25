@@ -29,7 +29,7 @@ public class ApiClient {
     }
 
     @Step("Логин под существующим пользователем")
-    public Response createAuthorization(UserData registration){
+    public Response createAuthorization(UserData registration) {
         return RestAssured.with()
                 .filters(requestFilter, responseFilter)
                 .baseUri(BASE_URL)
