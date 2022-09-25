@@ -8,12 +8,12 @@ import org.junit.Before;
 import org.junit.Test;
 import site.nomoreparties.stellarburgers.pojo.Client.ApiClient;
 import site.nomoreparties.stellarburgers.pojo.Model.UserData;
+
 import java.util.Random;
 
 public class UpdateUserDataWithoutAuthorizationTest {
     private ApiClient client;
     private String accessToken;
-
 
     @Before
     public void setUp() {
@@ -55,7 +55,7 @@ public class UpdateUserDataWithoutAuthorizationTest {
     }
 
     @After
-    public void deleteUser(){
+    public void deleteUser() {
         client.deleteUser(accessToken);
     }
 }

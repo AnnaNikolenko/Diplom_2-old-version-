@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Ingredients {
     private List<Data> data;
-    private  String success;
+    private String success;
 
     public Ingredients(List<Data> data, String success) {
         this.data = data;
